@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>مطعم وكافيه ديرة هلي - Deeret Haly</title>
+    <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-green: #2d5a27; /* اللون الأخضر من اللوجو */
+            --gold: #c5a059; /* الذهبي الفخم */
+            --dark-bg: #0f0f0f;
+            --overlay: rgba(0, 0, 0, 0.6);
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Cairo', sans-serif; }
+        body { background-color: var(--dark-bg); color: white; line-height: 1.6; }
+
+        /* واجهة فخمة جداً */
+        .hero {
+            height: 100vh;
+            background: linear-gradient(var(--overlay), var(--overlay)), 
+                        url('https://images.unsplash.com/photo-1544148103-0773bf10d330?q=80&w=1470&auto=format&fit=crop'); 
+            background-size: cover;
+            background-position: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            border-bottom: 5px solid var(--gold);
+        }
+
+        .hero img { width: 180px; margin-bottom: 20px; filter: drop-shadow(0 0 10px var(--gold)); }
+        .hero h1 { font-size: 3rem; color: var(--gold); margin-bottom: 10px; font-weight: 900; }
+        .hero p { font-size: 1.3rem; margin-bottom: 30px; color: #f0f0f0; max-width: 80%; }
+
+        /* أزرار الواجهة */
+        .btn-container { display: flex; gap: 15px; flex-wrap: wrap; justify-content: center; }
+        
+        .main-btn {
+            padding: 15px 35px;
+            font-size: 1.1rem;
+            font-weight: bold;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        .btn-menu { background-color: var(--gold); color: black; border: none; }
+        .btn-menu:hover { background-color: #d4af37; transform: scale(1.05); }
+
+        /* قسم المنيو */
+        .menu-section { padding: 60px 20px; text-align: center; }
+        .menu-section h2 { color: var(--gold); font-size: 2.2rem; margin-bottom: 40px; }
+        
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .food-card {
+            background: #1a1a1a;
+            border-radius: 12px;
+            overflow: hidden;
+            border: 1px solid #333;
+            transition: 0.3s;
+        }
+
+        .food-card:hover { border-color: var(--gold); transform: translateY(-5px); }
+        .food-card img { width: 100%; height: 250px; object-fit: cover; }
+        .food-card h3 { padding: 15px; color: var(--gold); }
+
+        /* كبسة تواصل واتساب */
+        .whatsapp-float {
+            position: fixed;
+            bottom: 30px;
+            left: 30px;
+            background-color: #25d366;
+            width: 65px;
+            height: 65px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.4);
+            z-index: 1000;
+            transition: 0.3s;
+            text-decoration: none;
+        }
+        .whatsapp-float:hover { transform: scale(1.1); }
+        .whatsapp-float svg { width: 35px; fill: white; }
+
+        @media (max-width: 600px) {
+            .hero h1 { font-size: 2rem; }
+            .hero p { font-size: 1rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <section class="hero">
+        <h1 style="border: 2px solid var(--gold); padding: 10px 30px;">ديرة هلي</h1>
+        <p>حيث يجتمع الذوق الرفيع مع الطعم الرائع - دابوق</p>
+        <div class="btn-container">
+            <a href="#menu" class="main-btn btn-menu">تصفح منيو الأصناف</a>
+            <a href="tel:+962798002040" class="main-btn" style="background: white; color: black;">اتصل بنا</a>
+        </div>
+    </section>
+
+    <section id="menu" class="menu-section">
+        <h2>قائمة الطعام المميزة</h2>
+        <div class="gallery-grid">
+            <div class="food-card">
+                <img src="https://images.unsplash.com/photo-1633945274405-b6c8069047b0?q=80&w=1470&auto=format&fit=crop" alt="مشاوي">
+                <h3>مشاوي مشكلة فخمة</h3>
+            </div>
+            <div class="food-card">
+                <img src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?q=80&w=1470&auto=format&fit=crop" alt="سلطات">
+                <h3>سلطات ومقبلات باردة</h3>
+            </div>
+            <div class="food-card">
+                <img src="https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=1469&auto=format&fit=crop" alt="أطباق رئيسية">
+                <h3>أطباق ديرة هلي الخاصة</h3>
+            </div>
+        </div>
+    </section>
+
+    <a href="https://wa.me/962798002040" class="whatsapp-float" target="_blank">
+        <svg viewBox="0 0 32 32"><path d="M16 0c-8.837 0-16 7.163-16 16 0 2.825 0.733 5.476 2.016 7.788l-2.016 7.375 7.541-1.98c2.247 1.192 4.811 1.867 7.54 1.867 8.837 0 16-7.163 16-16s-7.163-16-16-16zM23.219 21.44c-0.297 0.835-1.472 1.521-2.021 1.621-0.549 0.1-1.123 0.14-1.791-0.080-0.669-0.22-1.336-0.44-2.221-0.811-3.763-1.564-6.195-5.385-6.381-5.632-0.187-0.247-1.517-2.016-1.517-3.844 0-1.828 0.957-2.728 1.296-3.1 0.341-0.371 0.743-0.463 0.991-0.463s0.493 0.015 0.711 0.025c0.219 0.011 0.511-0.084 0.796 0.604 0.285 0.688 0.976 2.383 1.061 2.556 0.084 0.173 0.141 0.375 0.025 0.589-0.113 0.211-0.171 0.341-0.341 0.536-0.171 0.196-0.359 0.439-0.511 0.589-0.171 0.165-0.351 0.345-0.151 0.688 0.2 0.341 0.887 1.464 1.905 2.368 1.312 1.164 2.416 1.527 2.756 1.7 0.341 0.173 0.541 0.145 0.741-0.084 0.2-0.231 0.857-0.996 1.085-1.341s0.456-0.285 0.769-0.171c0.313 0.113 1.989 0.939 2.329 1.111s0.569 0.259 0.655 0.403c0.084 0.145 0.084 0.835-0.211 1.671z"></path></svg>
+    </a>
+
+    <footer style="text-align: center; padding: 30px; border-top: 1px solid #333;">
+        <p>© 2026 مطعم ديرة هلي - Amman, Dabouq</p>
+    </footer>
+
+</body>
+</html>
